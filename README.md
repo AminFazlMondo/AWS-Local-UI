@@ -3,7 +3,7 @@
 This is a UI to look into the AWS resources created in LocalStack and aimed to be used for developers.
 This project is inspired by [LocalStack](https://github.com/localstack/localstack)
 
-![preview](./docs/preview.gif)
+![preview](https://raw.githubusercontent.com/AminFazlMondo/AWS-Local-UI/main/docs/preview.gif)
 
 ## Supported AWS Resources
 
