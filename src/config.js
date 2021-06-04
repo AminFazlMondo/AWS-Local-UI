@@ -1,0 +1,5 @@
+export const AWSAccessKeyId = process.env.AWS_ACCESS_KEY_ID || 'test'
+export const AWSSecretAccessKey = process.env.AWS_SECRET_ACCESS_KEY || 'test'
+export const AWSRegion = process.env.AWS_REGION || 'ap-southeast-2'
+export const localStackHostname = process.env.LOCALSTACK_HOSTNAME || 'http://localhost'
+export const localStackPort = process.env.LOCALSTACK_PORT || '4566'
