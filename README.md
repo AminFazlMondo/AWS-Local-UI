@@ -3,6 +3,8 @@
 This is a UI to look into the AWS resources created in LocalStack and aimed to be used for developers.
 This project is inspired by [LocalStack](https://github.com/localstack/localstack)
 
+![preview](./docs/preview.gif)
+
 ## Supported AWS Resources
 
 - Cloudwatch logs
