@@ -1,0 +1,18 @@
+name: update-metadata-docker-hub
+
+on:
+  workflow_dispatch
+
+jobs:
+  update_metadata_docker_hub:
+    runs-on: ubuntu-latest
+    name: Update Metadata in DockerHub
+    steps:
+      - name: Check Out Repo 
+        uses: actions/checkout@v2
+
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v2
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}

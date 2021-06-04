@@ -32,9 +32,10 @@ jobs:
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-        
-      - name: Docker Hub Description
-        uses: peter-evans/dockerhub-description@v2
+
+      - id: update_metadata_docker_hub
+        uses: benc-uk/workflow-dispatch@v1
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+          token: ${{ secrets.WORKFLOW_TOKEN }}
+          workflow: update-metadata-docker-hub
+        
