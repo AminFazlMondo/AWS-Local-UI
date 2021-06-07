@@ -1,10 +1,10 @@
-import CustomDataGrid from './CustomDataGrid';
-import { withStyles } from '@material-ui/core/styles';
+import CustomDataGrid from './CustomDataGrid'
+import {withStyles} from '@material-ui/core/styles'
 
 const ClickableRowsDataGrid = withStyles({
   row: {
     cursor: 'pointer'
   }
-})(CustomDataGrid);
+})(CustomDataGrid)
 
-export default ClickableRowsDataGrid;
+export default ClickableRowsDataGrid

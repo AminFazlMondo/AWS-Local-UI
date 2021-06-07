@@ -1,17 +1,19 @@
-
-import { Icon } from '@iconify/react';
+import React from 'react'
+import {Icon} from '@iconify/react'
 import awsCloudwatch from '@iconify-icons/logos/aws-cloudwatch'
 import awsLambda from '@iconify-icons/logos/aws-lambda'
-import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Typography from '@material-ui/core/Typography';
+import aws from '@iconify-icons/logos/aws'
+import {Link} from 'react-router-dom'
+import {makeStyles} from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import Typography from '@material-ui/core/Typography'
 
 const items = [
-  { description: 'Cloudwatch', icon: awsCloudwatch, link: 'cloudwatch' },
-  { description: 'Lambda', icon: awsLambda, link: 'lambda' },
+  {description: 'Cloudwatch', icon: awsCloudwatch, link: 'cloudwatch'},
+  {description: 'Lambda', icon: awsLambda, link: 'lambda'},
+  {description: 'State Machines', icon: aws, link: 'state-machines'},
 ]
 
 export const domains = items.map(item => ({friendlyName: item.description, path: item.link}))
@@ -43,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     height: theme.spacing(5)
   }
-}));
+}))
 
 function renderItem(item, index, classes) {
   return (
@@ -59,11 +61,11 @@ function renderItem(item, index, classes) {
         </CardContent>
       </Card>
     </Link>
-  );
+  )
 }
 
 function Home() {
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.root}>
       <Grid
@@ -76,7 +78,7 @@ function Home() {
         {items.map((item, index) => renderItem(item, index, classes))}
       </Grid>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

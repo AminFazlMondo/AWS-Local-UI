@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "react-app",
+    "@mondopower/eslint-config-mondo"
+  ],
+  "overrides": [
+    {
+      "files": "./src/**/*.js",
+      "rules": {
+        "react/prop-types": "off",
+        "filenames/match-regex": "off",
+        "no-console": "warn"
+      }
+    }
+  ]
+}

@@ -1,31 +1,37 @@
-import { Component } from 'react';
-import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid';
-import { getLogGroups } from './remote'
-import { Route, Switch, withRouter } from 'react-router-dom';
+import React from 'react'
+import {Component} from 'react'
+import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid'
+import {getLogGroups} from './remote'
+import {Route, Switch, withRouter} from 'react-router-dom'
 import CloudwatchGroup from './group'
-import CircularProgress from '@material-ui/core/CircularProgress';
-
-
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 class Cloudwatch extends Component {
   columns = [
-    { field: 'name', headerName: 'Log group', flex: 1 }
+    {field: 'name', headerName: 'Log group', flex: 1}
+  ]
+
+  sortModel = [
+    {
+      field: 'name',
+      sort: 'asc'
+    }
   ]
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       rows: [],
       isLoading: true,
       error: undefined
-    };
+    }
   }
 
   render() {
-    const { match } = this.props
-    const { path } = match
+    const {match} = this.props
+    const {path} = match
     return (
-      <div style={{ width: '100%' }}>
+      <div style={{width: '100%'}}>
         <Switch>
           <Route path={`${path}/group/:groupName`} component={CloudwatchGroup} />
           <Route path={path}>
@@ -34,13 +40,13 @@ class Cloudwatch extends Component {
           </Route>
         </Switch>
       </div>
-    );
+    )
   }
 
   renderGrid(state, props) {
-    const { rows, error, isLoading } = state;
-    const { match, history } = props
-    const { path } = match
+    const {rows, error, isLoading} = state
+    const {match, history} = props
+    const {path} = match
     const clickHandler = this.getRowClickHandler(history, path)
     if (isLoading)
       return (<CircularProgress />)
@@ -50,6 +56,7 @@ class Cloudwatch extends Component {
         error={error}
         rows={rows}
         columns={this.columns}
+        sortModel={this.sortModel}
         onRowClick={clickHandler}
         isRowSelectable={false}
         hideFooterPagination={true}
@@ -61,21 +68,20 @@ class Cloudwatch extends Component {
 
   componentDidMount() {
     getLogGroups()
-      .then(rows => this.setState({ rows, isLoading: false }))
+      .then(rows => this.setState({rows, isLoading: false}))
       .catch(error => {
         console.error(error)
-        this.setState({ error, isLoading: false })
+        this.setState({error, isLoading: false})
       })
   }
 
   getRowClickHandler(history, currentPath) {
-    return function (target) {
-      const { row } = target
+    return function(target) {
+      const {row} = target
       const path = `${currentPath}/group/${encodeURIComponent(row.name)}`
       history.push(path)
     }
   }
 }
 
-
-export default withRouter(Cloudwatch);
+export default withRouter(Cloudwatch)

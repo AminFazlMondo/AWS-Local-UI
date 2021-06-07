@@ -15,7 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src"
   },
   "eslintConfig": {
     "extends": [
@@ -42,7 +43,16 @@
     "@material-ui/core": "^4.11.4",
     "@material-ui/data-grid": "^4.0.0-alpha.29",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.58",
+    "@mondopower/eslint-config-mondo": "^1.0.1",
     "aws-sdk": "^2.918.0",
+    "eslint": "^7.28.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-filenames": "^1.3.2",
+    "eslint-plugin-no-only-tests": "^2.6.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-react": "^7.24.0",
+    "luxon": "^1.27.0",
     "react-lazylog": "^4.5.3",
     "react-router-dom": "^5.2.0"
   }

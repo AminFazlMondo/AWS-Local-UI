@@ -1,33 +1,40 @@
-import { Component } from 'react';
-import CustomDataGrid from '../DataGrids/CustomDataGrid';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { getFunctions } from './remote'
-
+import React from 'react'
+import {Component} from 'react'
+import CustomDataGrid from '../DataGrids/CustomDataGrid'
+import CircularProgress from '@material-ui/core/CircularProgress'
+import {getFunctions} from './remote'
 
 class Lambda extends Component {
   columns = [
-    { field: 'name', headerName: 'Function Name', flex: 1 }
+    {field: 'name', headerName: 'Function Name', flex: 1}
+  ]
+
+  sortModel = [
+    {
+      field: 'name',
+      sort: 'asc'
+    }
   ]
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       rows: [],
       isLoading: true,
       error: undefined
-    };
+    }
   }
 
   render() {
     return (
-      <div style={{ width: '100%' }}>
+      <div style={{width: '100%'}}>
         <h2>Functions</h2>
         {this.renderGrid(this.state)}
       </div>
-    );
+    )
   }
   renderGrid(state) {
-    const { rows, error, isLoading } = state;
+    const {rows, error, isLoading} = state
     if (isLoading)
       return (<CircularProgress />)
 
@@ -36,6 +43,7 @@ class Lambda extends Component {
         error={error}
         rows={rows}
         columns={this.columns}
+        sortModel={this.sortModel}
         isRowSelectable={false}
         hideFooterPagination={true}
         loading={isLoading}
@@ -46,13 +54,12 @@ class Lambda extends Component {
 
   componentDidMount() {
     getFunctions()
-      .then(rows => this.setState({ rows, isLoading: false }))
+      .then(rows => this.setState({rows, isLoading: false}))
       .catch(error => {
         console.error(error)
-        this.setState({ error, isLoading: false })
+        this.setState({error, isLoading: false})
       })
   }
 }
 
-
-export default Lambda;
+export default Lambda

@@ -9,6 +9,7 @@ This project is inspired by [LocalStack](https://github.com/localstack/localstac
 
 - Cloudwatch logs
 - Lambda functions
+- Step functions
 
 ## How to use
 

@@ -1,21 +1,41 @@
 import React from 'react'
 import {Component} from 'react'
 import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid'
-import {getLogStreams} from './remote'
+import {getExecutions} from './remote'
 import {Route, Switch, withRouter} from 'react-router-dom'
-import CloudwatchStream from './stream'
-import {Link} from '@material-ui/core'
+// import Execution from './execution'
 import CircularProgress from '@material-ui/core/CircularProgress'
+// import {withStyles} from '@material-ui/core/styles'
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline'
+import CancelIcon from '@material-ui/icons/Cancel'
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
+import Typography from '@material-ui/core/Typography'
 
-class CloudwatchGroup extends Component {
+function renderStatusIcon(status) {
+  if (status === 'SUCCEEDED')
+    return (<CheckCircleOutlineIcon style={{color: 'green'}} />)
+  if (status === 'FAILED')
+    return (<CancelIcon style={{color: 'red'}} />)
+
+  return (<MoreHorizIcon style={{color: 'blue'}}  />)
+}
+
+class Machine extends Component {
   columns = [
-    {field: 'name', headerName: 'Log stream', flex: 3},
-    {field: 'lastEvent', headerName: 'Last Event', flex: 2}
+    {field: 'id', headerName: 'ARN', flex: 3, hide: true},
+    {field: 'startTime', headerName: 'Start Time', flex: 2},
+    {field: 'stopTime', headerName: 'Stop Time', flex: 2},
+    {field: 'status', headerName: 'Status', flex: 2, renderCell: this.renderStatus}
   ]
+
+  renderStatus(params) {
+    const status = params.value
+    return (<Typography>{renderStatusIcon(status)} {status}</Typography>)
+  }
 
   sortModel = [
     {
-      field: 'lastEvent',
+      field: 'startTime',
       sort: 'desc'
     }
   ]
@@ -23,7 +43,7 @@ class CloudwatchGroup extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      groupName: '',
+      stateMachineArn: '',
       rows: [],
       error: undefined,
       isLoading: true,
@@ -31,18 +51,14 @@ class CloudwatchGroup extends Component {
   }
 
   render() {
-    const {groupName} = this.state
     const {match} = this.props
-    const {path, url} = match
+    const {path} = match
     return (
       <div style={{width: '100%'}}>
         <Switch>
-          <Route path={`${path}/stream/`} component={CloudwatchStream} />
-          <Route path={`${path}/stream/:streamName`} component={CloudwatchStream} />
+          {/* <Route path={`${path}/execution/:executionArn`} component={Execution} /> */}
           <Route path={path}>
-            <h2>Log Streams</h2>
-            <h3>Group: {groupName}</h3>
-            <h4><Link href={`${url}/stream/`}>All</Link></h4>
+            <h2>Executions</h2>
             {this.renderGrid(this.state, this.props)}
           </Route>
         </Switch>
@@ -75,10 +91,10 @@ class CloudwatchGroup extends Component {
   }
 
   componentDidMount() {
-    const groupNameParam = this.props.match.params.groupName
-    const groupName = decodeURIComponent(groupNameParam)
-    this.setState({groupName})
-    getLogStreams(decodeURIComponent(groupName))
+    const stateMachineArnParam = this.props.match.params.stateMachineArn
+    const stateMachineArn = decodeURIComponent(stateMachineArnParam)
+    this.setState({stateMachineArn})
+    getExecutions(decodeURIComponent(stateMachineArn))
       .then(rows => this.setState({rows, isLoading: false}))
       .catch(error => {
         console.error(error)
@@ -89,10 +105,10 @@ class CloudwatchGroup extends Component {
   getRowClickHandler(history, currentPath) {
     return function(target) {
       const {row} = target
-      const path = `${currentPath}/stream/${encodeURIComponent(row.name)}`
+      const path = `${currentPath}/execution/${encodeURIComponent(row.id)}`
       history.push(path)
     }
   }
 }
 
-export default withRouter(CloudwatchGroup)
+export default withRouter(Machine)
