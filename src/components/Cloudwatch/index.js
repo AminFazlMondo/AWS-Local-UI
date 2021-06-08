@@ -6,17 +6,49 @@ import {Route, Switch, withRouter} from 'react-router-dom'
 import CloudwatchGroup from './group'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
-class Cloudwatch extends Component {
-  columns = [
-    {field: 'name', headerName: 'Log group', flex: 1}
-  ]
+const columns = [
+  {field: 'name', headerName: 'Log group', flex: 1}
+]
 
-  sortModel = [
-    {
-      field: 'name',
-      sort: 'asc'
-    }
-  ]
+const sortModel = [
+  {
+    field: 'name',
+    sort: 'asc'
+  }
+]
+
+function renderGrid(state, props) {
+  const {rows, error, isLoading} = state
+  const {match, history} = props
+  const {path} = match
+  const clickHandler = getRowClickHandler(history, path)
+  if (isLoading)
+    return (<CircularProgress />)
+
+  return (
+    <ClickableRowsDataGrid
+      error={error}
+      rows={rows}
+      columns={columns}
+      sortModel={sortModel}
+      onRowClick={clickHandler}
+      isRowSelectable={false}
+      hideFooterPagination={true}
+      loading={isLoading}
+      autoHeight={true}
+    />
+  )
+}
+
+function getRowClickHandler(history, currentPath) {
+  return function(target) {
+    const {row} = target
+    const path = `${currentPath}/group/${encodeURIComponent(row.name)}`
+    history.push(path)
+  }
+}
+
+class Cloudwatch extends Component {
 
   constructor(props) {
     super(props)
@@ -36,33 +68,10 @@ class Cloudwatch extends Component {
           <Route path={`${path}/group/:groupName`} component={CloudwatchGroup} />
           <Route path={path}>
             <h2>Log Groups</h2>
-            {this.renderGrid(this.state, this.props)}
+            {renderGrid(this.state, this.props)}
           </Route>
         </Switch>
       </div>
-    )
-  }
-
-  renderGrid(state, props) {
-    const {rows, error, isLoading} = state
-    const {match, history} = props
-    const {path} = match
-    const clickHandler = this.getRowClickHandler(history, path)
-    if (isLoading)
-      return (<CircularProgress />)
-
-    return (
-      <ClickableRowsDataGrid
-        error={error}
-        rows={rows}
-        columns={this.columns}
-        sortModel={this.sortModel}
-        onRowClick={clickHandler}
-        isRowSelectable={false}
-        hideFooterPagination={true}
-        loading={isLoading}
-        autoHeight={true}
-      />
     )
   }
 
@@ -73,14 +82,6 @@ class Cloudwatch extends Component {
         console.error(error)
         this.setState({error, isLoading: false})
       })
-  }
-
-  getRowClickHandler(history, currentPath) {
-    return function(target) {
-      const {row} = target
-      const path = `${currentPath}/group/${encodeURIComponent(row.name)}`
-      history.push(path)
-    }
   }
 }
 

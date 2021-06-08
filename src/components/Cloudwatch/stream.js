@@ -4,6 +4,21 @@ import {getLogEvents} from './remote'
 import {LazyLog} from 'react-lazylog'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
+function renderLogs(rows, isLoading) {
+  if (isLoading)
+    return (<CircularProgress />)
+
+  const text = rows.map(row => `[${row.time}]\t${row.message}`).join('\n')
+
+  return (
+    <LazyLog
+      text={text}
+      enableSearch={true}
+      selectableLines={true}
+    />
+  )
+}
+
 class CloudwatchStream extends Component {
   columns = [
     {field: 'time', headerName: 'Time', flex: 1},
@@ -21,29 +36,14 @@ class CloudwatchStream extends Component {
     }
   }
 
-  renderLogs(logs) {
-    if (!logs)
-      return (<CircularProgress />)
-
-    return (
-      <LazyLog
-        text={logs}
-        enableSearch={true}
-        selectableLines={true}
-        lineClassName={'line-amin'}
-      />
-    )
-  }
-
   render() {
-    const {rows, groupName, streamName} = this.state
-    const text = rows.map(row => `[${row.time}]\t${row.message}`).join('\n')
+    const {rows, groupName, streamName, isLoading} = this.state
     return (
-      <div style={{height: 750, width: '100%'}}>
+      <div style={{height: 750}}>
         <h2>Log Events</h2>
         <h3>Group: {groupName}</h3>
         <h4>Stream: {streamName}</h4>
-        {this.renderLogs(text)}
+        {renderLogs(rows, isLoading)}
       </div>
     )
   }

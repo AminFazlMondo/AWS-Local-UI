@@ -6,19 +6,52 @@ import {Route, Switch, withRouter} from 'react-router-dom'
 import CloudwatchStream from './stream'
 import {Link} from '@material-ui/core'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import {renderTimestamp} from '../DataGrids/helpers'
+
+const columns = [
+  {field: 'name', headerName: 'Log stream', flex: 3},
+  {field: 'lastEvent', headerName: 'Last Event', flex: 2, renderCell: renderTimestamp}
+]
+
+const sortModel = [
+  {
+    field: 'lastEvent',
+    sort: 'desc'
+  }
+]
+
+function getRowClickHandler(history, currentPath) {
+  return function(target) {
+    const {row} = target
+    const path = `${currentPath}/stream/${encodeURIComponent(row.name)}`
+    history.push(path)
+  }
+}
+
+function renderGrid(state, props) {
+  const {rows, error, isLoading} = state
+  const {match, history} = props
+  const {url} = match
+  const clickHandler = getRowClickHandler(history, url)
+  if (isLoading)
+    return (<CircularProgress />)
+
+  return (
+    <ClickableRowsDataGrid
+      error={error}
+      rows={rows}
+      columns={columns}
+      sortModel={sortModel}
+      onRowClick={clickHandler}
+      isRowSelectable={false}
+      hideFooterPagination={true}
+      loading={isLoading}
+      autoHeight={true}
+    />
+  )
+}
 
 class CloudwatchGroup extends Component {
-  columns = [
-    {field: 'name', headerName: 'Log stream', flex: 3},
-    {field: 'lastEvent', headerName: 'Last Event', flex: 2}
-  ]
-
-  sortModel = [
-    {
-      field: 'lastEvent',
-      sort: 'desc'
-    }
-  ]
 
   constructor(props) {
     super(props)
@@ -43,34 +76,11 @@ class CloudwatchGroup extends Component {
             <h2>Log Streams</h2>
             <h3>Group: {groupName}</h3>
             <h4><Link href={`${url}/stream/`}>All</Link></h4>
-            {this.renderGrid(this.state, this.props)}
+            {renderGrid(this.state, this.props)}
           </Route>
         </Switch>
 
       </div>
-    )
-  }
-
-  renderGrid(state, props) {
-    const {rows, error, isLoading} = state
-    const {match, history} = props
-    const {url} = match
-    const clickHandler = this.getRowClickHandler(history, url)
-    if (isLoading)
-      return (<CircularProgress />)
-
-    return (
-      <ClickableRowsDataGrid
-        error={error}
-        rows={rows}
-        columns={this.columns}
-        sortModel={this.sortModel}
-        onRowClick={clickHandler}
-        isRowSelectable={false}
-        hideFooterPagination={true}
-        loading={isLoading}
-        autoHeight={true}
-      />
     )
   }
 
@@ -84,14 +94,6 @@ class CloudwatchGroup extends Component {
         console.error(error)
         this.setState({error, isLoading: false})
       })
-  }
-
-  getRowClickHandler(history, currentPath) {
-    return function(target) {
-      const {row} = target
-      const path = `${currentPath}/stream/${encodeURIComponent(row.name)}`
-      history.push(path)
-    }
   }
 }
 

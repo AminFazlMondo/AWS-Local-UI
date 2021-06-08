@@ -3,18 +3,54 @@ import {Component} from 'react'
 import CustomDataGrid from '../DataGrids/CustomDataGrid'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import {getFunctions} from './remote'
+import Link from '@material-ui/core/Link'
+import LaunchIcon from '@material-ui/icons/Launch'
+
+const columns = [
+  {field: 'name', headerName: 'Name', flex: 3},
+  {field: 'description', headerName: 'Description', flex: 5},
+  {field: 'actions', headerName: 'Actions', flex: 1, renderCell: renderActions}
+]
+
+const sortModel = [
+  {
+    field: 'name',
+    sort: 'asc'
+  }
+]
+
+function renderActions(params) {
+  const {row} = params
+  const {name} = row
+  const groupName = `/aws/lambda/${name}`
+  const path = `cloudwatch/group/${encodeURIComponent(groupName)}`
+  return (
+    <Link color="inherit" href={path} key={path} component="button" variant="body2" target='_blank'>
+      Logs <LaunchIcon style={{top: '.5rem', position: 'relative', color: 'blue'}} />
+    </Link>
+  )
+}
+
+function renderGrid(state) {
+  const {rows, error, isLoading} = state
+  if (isLoading)
+    return (<CircularProgress />)
+
+  return (
+    <CustomDataGrid
+      error={error}
+      rows={rows}
+      columns={columns}
+      sortModel={sortModel}
+      isRowSelectable={false}
+      hideFooterPagination={true}
+      loading={isLoading}
+      autoHeight={true}
+    />
+  )
+}
 
 class Lambda extends Component {
-  columns = [
-    {field: 'name', headerName: 'Function Name', flex: 1}
-  ]
-
-  sortModel = [
-    {
-      field: 'name',
-      sort: 'asc'
-    }
-  ]
 
   constructor(props) {
     super(props)
@@ -29,26 +65,8 @@ class Lambda extends Component {
     return (
       <div style={{width: '100%'}}>
         <h2>Functions</h2>
-        {this.renderGrid(this.state)}
+        {renderGrid(this.state)}
       </div>
-    )
-  }
-  renderGrid(state) {
-    const {rows, error, isLoading} = state
-    if (isLoading)
-      return (<CircularProgress />)
-
-    return (
-      <CustomDataGrid
-        error={error}
-        rows={rows}
-        columns={this.columns}
-        sortModel={this.sortModel}
-        isRowSelectable={false}
-        hideFooterPagination={true}
-        loading={isLoading}
-        autoHeight={true}
-      />
     )
   }
 

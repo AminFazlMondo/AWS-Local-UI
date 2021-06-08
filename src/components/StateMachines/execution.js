@@ -1,12 +1,34 @@
 import React from 'react'
 import {Component} from 'react'
 import {getExecution} from './remote'
-import TreeView from '@material-ui/lab/TreeView'
-import TreeItem from '@material-ui/lab/TreeItem'
 import CircularProgress from '@material-ui/core/CircularProgress'
-// import Collapse from '@material-ui/core/Collapse'
-// import {LazyLog} from 'react-lazylog'
-// import CircularProgress from '@material-ui/core/CircularProgress'
+import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid'
+import {renderDate, renderStatus} from '../DataGrids/helpers'
+
+const columns = [
+  {field: 'timestamp', headerName: 'Timestamp', flex: 2, renderCell: renderDate},
+  {field: 'details', headerName: 'Details', flex: 2},
+  {field: 'type', headerName: 'Event Type', flex: 2, renderCell: renderStatus}
+]
+
+const sortModel = [
+  {
+    field: 'timestamp',
+    sort: 'asc'
+  }
+]
+
+function renderEvents(events) {
+  return (
+    <ClickableRowsDataGrid
+      rows={events}
+      columns={columns}
+      sortModel={sortModel}
+      isRowSelectable={false}
+      hideFooterPagination={true}
+      autoHeight={true}
+    />)
+}
 
 class Execution extends Component {
 
@@ -21,33 +43,17 @@ class Execution extends Component {
   }
 
   render() {
-    const {details, isLoading} = this.state
+    const {events, isLoading} = this.state
     if (isLoading)
       return (<CircularProgress />)
-    console.log('###DEBUG-details:', details)
-    return (
-      <TreeView>
-        <TreeItem label={details.status} />
-        <TreeItem label={details.startDate.toISOString()} />
-        <TreeItem label={details.stopDate.toISOString()} />
 
-        <TreeItem label='steps'>
-          {this.renderSteps()}
-        </TreeItem>
-      </TreeView>
+    return (
+      <div>
+        <h2>Events</h2>
+        {renderEvents(events)}
+      </div>
     )
   }
-  renderSteps() {
-
-  }
-  // <div style={{height: 750, width: '100%'}}>
-  //   {/* <h3>Group: {groupName}</h3>
-  //   <h4>Stream: {streamName}</h4>
-  //   {this.renderLogs(text)} */}
-  // {/* <TreeView>
-  //     <TreeItem label="amin" />
-  //   </TreeView> */}
-  // </div>
 
   componentDidMount() {
     const executionArnParam = this.props.match.params.executionArn
@@ -55,7 +61,7 @@ class Execution extends Component {
     this.setState({executionArn})
 
     getExecution(executionArn)
-      .then(details => this.setState({details, isLoading: false}))
+      .then(({details, events}) => this.setState({details, events, isLoading: false}))
       .catch(error => {
         console.error(error)
         this.setState({error, isLoading: false})

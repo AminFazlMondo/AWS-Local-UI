@@ -1,6 +1,5 @@
 import cloudwatchlogs from 'aws-sdk/clients/cloudwatchlogs'
 import {endpoint} from '../../aws'
-import {toFullStringFromMillis} from '../../utils/date'
 
 const client = new cloudwatchlogs({endpoint})
 
@@ -14,7 +13,7 @@ export async function getLogStreams(logGroupName) {
   return response.logStreams.map(stream => {
     return {
       id: stream.arn,
-      lastEvent: toFullStringFromMillis(stream.lastEventTimestamp),
+      lastEvent: stream.lastEventTimestamp,
       name: stream.logStreamName
     }
   })
@@ -26,7 +25,7 @@ export async function getLogEvents(logGroupName, logStreamName) {
   return response.events.map((event, index) => {
     return {
       id: index,
-      time: toFullStringFromMillis(event.timestamp),
+      time: event.timestamp,
       message: event.message
     }
   })
