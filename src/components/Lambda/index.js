@@ -25,7 +25,7 @@ function renderActions(params) {
   const groupName = `/aws/lambda/${name}`
   const path = `cloudwatch/group/${encodeURIComponent(groupName)}`
   return (
-    <Link color="inherit" href={path} key={path} component="button" variant="body2" target='_blank'>
+    <Link color="inherit" href={path} key={path} target='_blank' underline='none'>
       Logs <LaunchIcon style={{top: '.5rem', position: 'relative', color: 'blue'}} />
     </Link>
   )

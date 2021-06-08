@@ -1,19 +1,18 @@
 import React from 'react'
-import {Icon} from '@iconify/react'
-import awsCloudwatch from '@iconify-icons/logos/aws-cloudwatch'
-import awsLambda from '@iconify-icons/logos/aws-lambda'
-import aws from '@iconify-icons/logos/aws'
 import {Link} from 'react-router-dom'
 import {makeStyles} from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
+import stepFunctionIcon from '../media/step-functions.svg'
+import lambdaIcon from '../media/lambda.svg'
+import cloudwatchIcon from '../media/cloudwatch.svg'
 
 const items = [
-  {description: 'Cloudwatch', icon: awsCloudwatch, link: 'cloudwatch'},
-  {description: 'Lambda', icon: awsLambda, link: 'lambda'},
-  {description: 'State Machines', icon: aws, link: 'state-machines'},
+  {description: 'Cloudwatch', icon: cloudwatchIcon, link: 'cloudwatch'},
+  {description: 'Lambda', icon: lambdaIcon, link: 'lambda'},
+  {description: 'State Machines', icon: stepFunctionIcon, link: 'state-machines'},
 ]
 
 export const domains = items.map(item => ({friendlyName: item.description, path: item.link}))
@@ -42,6 +41,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     display: 'flex'
   },
+  icon: {
+    width: '90%',
+    maxHeight: '100%'
+  },
   footer: {
     height: theme.spacing(5)
   }
@@ -52,7 +55,7 @@ function renderItem(item, index, classes) {
     <Link key={index} to={`/${item.link}`} className={classes.tile}>
       <Card className={classes.card}>
         <CardContent className={classes.media}>
-          <Icon icon={item.icon} width='60%' max-height='90%' />
+          <img src={item.icon} alt={item.description} className={classes.icon} />
         </CardContent>
         <CardContent className={classes.footer}>
           <Typography variant="h5" color="textSecondary">

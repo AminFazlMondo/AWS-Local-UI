@@ -35,7 +35,7 @@ class Header extends Component {
 
   renderHome(classes) {
     return (
-      <Link color="inherit" href="/" className={classes.link} key="/">
+      <Link color="inherit" href="/" className={classes.link} key="/" underline='none'>
         <HomeIcon className={classes.icon} fontSize='large' />
       </Link>
     )
