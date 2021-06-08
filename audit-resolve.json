@@ -1,0 +1,431 @@
+{
+  "decisions": {
+    "1693|react-scripts>css-loader>icss-utils>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>css-loader>postcss-modules-local-by-default>icss-utils>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>css-loader>postcss-modules-values>icss-utils>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>css-loader>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>css-loader>postcss-modules-extract-imports>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>css-loader>postcss-modules-local-by-default>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>css-loader>postcss-modules-scope>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>css-loader>postcss-modules-values>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>css-declaration-sorter>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>cssnano-util-raw-cache>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-calc>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-colormin>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-convert-values>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-discard-comments>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-discard-duplicates>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735927,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-discard-empty>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-discard-overridden>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-merge-longhand>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-merge-longhand>stylehacks>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-merge-rules>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-minify-font-values>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-minify-gradients>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-minify-params>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-minify-selectors>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-normalize-charset>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-normalize-display-values>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-normalize-positions>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-normalize-repeat-style>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-normalize-string>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-normalize-timing-functions>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-normalize-unicode>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-normalize-url>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-normalize-whitespace>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-ordered-values>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-reduce-initial>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-reduce-transforms>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-svgo>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-unique-selectors>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>optimize-css-assets-webpack-plugin>cssnano>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-flexbugs-fixes>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-loader>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-normalize>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-normalize>postcss-browser-comments>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>autoprefixer>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>css-blank-pseudo>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>css-has-pseudo>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>css-prefers-color-scheme>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-attribute-case-insensitive>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-color-functional-notation>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-color-gray>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-color-hex-alpha>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-color-mod-function>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-color-rebeccapurple>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-custom-media>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-custom-properties>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-custom-selectors>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-dir-pseudo-class>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-double-position-gradients>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-env-function>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-focus-visible>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-focus-within>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-font-variant>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-gap-properties>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-image-set-function>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-initial>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-lab-function>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-logical>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-media-minmax>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-nesting>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-overflow-shorthand>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-page-break>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-place>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-pseudo-class-any-link>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-replace-overflow-wrap>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-selector-matches>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>postcss-preset-env>postcss-selector-not>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1693|react-scripts>resolve-url-loader>postcss": {
+      "decision": "ignore",
+      "madeAt": 1623150735928,
+      "expiresAt": 1623755513238
+    },
+    "1747|react-scripts>react-dev-utils>browserslist": {
+      "decision": "ignore",
+      "madeAt": 1623150745539,
+      "expiresAt": 1623755513238
+    },
+    "1751|react-scripts>webpack>watchpack>watchpack-chokidar2>chokidar>glob-parent": {
+      "decision": "ignore",
+      "madeAt": 1623150751448,
+      "expiresAt": 1623755513238
+    },
+    "1751|react-scripts>webpack-dev-server>chokidar>glob-parent": {
+      "decision": "ignore",
+      "madeAt": 1623150751448,
+      "expiresAt": 1623755513238
+    },
+    "1754|react-scripts>@svgr/webpack>@svgr/plugin-svgo>svgo>css-select>css-what": {
+      "decision": "ignore",
+      "madeAt": 1623150760083,
+      "expiresAt": 1623755513238
+    },
+    "1754|react-scripts>optimize-css-assets-webpack-plugin>cssnano>cssnano-preset-default>postcss-svgo>svgo>css-select>css-what": {
+      "decision": "ignore",
+      "madeAt": 1623150760083,
+      "expiresAt": 1623755513238
+    },
+    "1754|react-scripts>html-webpack-plugin>pretty-error>renderkid>css-select>css-what": {
+      "decision": "ignore",
+      "madeAt": 1623150760083,
+      "expiresAt": 1623755513238
+    }
+  },
+  "rules": {},
+  "version": 1
+}
