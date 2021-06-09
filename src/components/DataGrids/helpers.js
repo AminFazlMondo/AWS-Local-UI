@@ -7,10 +7,14 @@ import {toFullStringFromMillis, toFullString} from '../../utils/date'
 
 export function renderTimestamp(params) {
   const {value} = params
+  if (!value)
+    return
   return toFullStringFromMillis(value)
 }
 export function renderDate(params) {
   const {value} = params
+  if (!value)
+    return
   return toFullString(value)
 }
 const commonStatusIconStyles = {
