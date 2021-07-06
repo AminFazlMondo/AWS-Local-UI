@@ -1,6 +1,7 @@
 import React from 'react'
-import Route from './Route'
 import {BrowserRouter} from 'react-router-dom'
+
+import Route from './Route'
 
 function App() {
   return (

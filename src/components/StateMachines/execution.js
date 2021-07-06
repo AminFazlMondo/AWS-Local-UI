@@ -1,9 +1,10 @@
+import CircularProgress from '@material-ui/core/CircularProgress'
 import React from 'react'
 import {Component} from 'react'
-import {getExecution} from './remote'
-import CircularProgress from '@material-ui/core/CircularProgress'
+
 import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid'
 import {renderDate, renderStatus} from '../DataGrids/helpers'
+import {getExecution} from './remote'
 
 const columns = [
   {field: 'timestamp', headerName: 'Timestamp', flex: 2, renderCell: renderDate},

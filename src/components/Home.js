@@ -1,13 +1,14 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import {makeStyles} from '@material-ui/core/styles'
-import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
+import Grid from '@material-ui/core/Grid'
+import {makeStyles} from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
-import stepFunctionIcon from '../media/step-functions.svg'
-import lambdaIcon from '../media/lambda.svg'
+import React from 'react'
+import {Link} from 'react-router-dom'
+
 import cloudwatchIcon from '../media/cloudwatch.svg'
+import lambdaIcon from '../media/lambda.svg'
+import stepFunctionIcon from '../media/step-functions.svg'
 
 const items = [
   {description: 'Cloudwatch', icon: cloudwatchIcon, link: 'cloudwatch'},

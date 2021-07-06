@@ -1,11 +1,12 @@
+import CircularProgress from '@material-ui/core/CircularProgress'
 import React from 'react'
 import {Component} from 'react'
-import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid'
-import {getExecutions} from './remote'
 import {Route, Switch, withRouter} from 'react-router-dom'
+
+import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid'
+import {renderDate, renderStatus} from '../DataGrids/helpers'
 import Execution from './execution'
-import CircularProgress from '@material-ui/core/CircularProgress'
-import {renderStatus, renderDate} from '../DataGrids/helpers'
+import {getExecutions} from './remote'
 
 const columns = [
   {field: 'id', headerName: 'ARN', flex: 3, hide: true},

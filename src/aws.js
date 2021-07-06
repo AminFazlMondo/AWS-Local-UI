@@ -1,4 +1,5 @@
 import aws, {Credentials} from 'aws-sdk'
+
 import {AWSAccessKeyId, AWSRegion, AWSSecretAccessKey, localStackHostname, localStackPort} from './config'
 
 aws.config.update({

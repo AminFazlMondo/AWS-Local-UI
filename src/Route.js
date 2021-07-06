@@ -1,10 +1,11 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
+
 import Cloudwatch from './components/Cloudwatch'
+import Header from './components/Header'
+import Home from './components/Home'
 import Lambda from './components/Lambda'
 import StateMachines from './components/StateMachines'
-import Home from './components/Home'
-import Header from './components/Header'
 
 function RouteSwitch() {
   return (

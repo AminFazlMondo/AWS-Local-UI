@@ -1,10 +1,11 @@
+import CircularProgress from '@material-ui/core/CircularProgress'
 import React from 'react'
 import {Component} from 'react'
-import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid'
-import {getStateMachines} from './remote'
 import {Route, Switch, withRouter} from 'react-router-dom'
+
+import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid'
 import Machine from './machine'
-import CircularProgress from '@material-ui/core/CircularProgress'
+import {getStateMachines} from './remote'
 
 const columns = [
   {field: 'name', headerName: 'Name', flex: 1}

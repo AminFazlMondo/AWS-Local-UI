@@ -1,4 +1,5 @@
 import lambda from 'aws-sdk/clients/lambda'
+
 import {endpoint} from '../../aws'
 
 const client = new lambda({endpoint})

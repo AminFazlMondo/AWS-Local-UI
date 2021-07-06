@@ -1,8 +1,9 @@
+import CircularProgress from '@material-ui/core/CircularProgress'
 import React from 'react'
 import {Component} from 'react'
-import {getLogEvents} from './remote'
 import {LazyLog} from 'react-lazylog'
-import CircularProgress from '@material-ui/core/CircularProgress'
+
+import {getLogEvents} from './remote'
 
 function renderLogs(rows, isLoading) {
   if (isLoading)

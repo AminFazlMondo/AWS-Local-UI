@@ -1,5 +1,6 @@
-import CustomDataGrid from './CustomDataGrid'
 import {withStyles} from '@material-ui/core/styles'
+
+import CustomDataGrid from './CustomDataGrid'
 
 const ClickableRowsDataGrid = withStyles({
   row: {

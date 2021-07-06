@@ -1,9 +1,10 @@
-import React from 'react'
-import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline'
-import CancelIcon from '@material-ui/icons/Cancel'
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
 import Typography from '@material-ui/core/Typography'
-import {toFullStringFromMillis, toFullString} from '../../utils/date'
+import CancelIcon from '@material-ui/icons/Cancel'
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline'
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
+import React from 'react'
+
+import {toFullString, toFullStringFromMillis} from '../../utils/date'
 
 export function renderTimestamp(params) {
   const {value} = params

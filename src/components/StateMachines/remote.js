@@ -1,4 +1,5 @@
 import stepfunctions from 'aws-sdk/clients/stepfunctions'
+
 import {endpoint} from '../../aws'
 
 const client = new stepfunctions({endpoint})

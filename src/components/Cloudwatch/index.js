@@ -1,10 +1,11 @@
+import CircularProgress from '@material-ui/core/CircularProgress'
 import React from 'react'
 import {Component} from 'react'
-import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid'
-import {getLogGroups} from './remote'
 import {Route, Switch, withRouter} from 'react-router-dom'
+
+import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid'
 import CloudwatchGroup from './group'
-import CircularProgress from '@material-ui/core/CircularProgress'
+import {getLogGroups} from './remote'
 
 const columns = [
   {field: 'name', headerName: 'Log group', flex: 1}

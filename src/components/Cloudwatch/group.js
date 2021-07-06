@@ -1,12 +1,13 @@
-import React from 'react'
-import {Component} from 'react'
-import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid'
-import {getLogStreams} from './remote'
-import {Route, Switch, withRouter} from 'react-router-dom'
-import CloudwatchStream from './stream'
 import {Link} from '@material-ui/core'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import React from 'react'
+import {Component} from 'react'
+import {Route, Switch, withRouter} from 'react-router-dom'
+
+import ClickableRowsDataGrid from '../DataGrids/ClickableRowsDataGrid'
 import {renderTimestamp} from '../DataGrids/helpers'
+import {getLogStreams} from './remote'
+import CloudwatchStream from './stream'
 
 const columns = [
   {field: 'name', headerName: 'Log stream', flex: 3},

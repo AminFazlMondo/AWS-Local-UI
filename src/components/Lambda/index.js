@@ -1,10 +1,11 @@
-import React from 'react'
-import {Component} from 'react'
-import CustomDataGrid from '../DataGrids/CustomDataGrid'
 import CircularProgress from '@material-ui/core/CircularProgress'
-import {getFunctions} from './remote'
 import Link from '@material-ui/core/Link'
 import LaunchIcon from '@material-ui/icons/Launch'
+import React from 'react'
+import {Component} from 'react'
+
+import CustomDataGrid from '../DataGrids/CustomDataGrid'
+import {getFunctions} from './remote'
 
 const columns = [
   {field: 'name', headerName: 'Name', flex: 3},

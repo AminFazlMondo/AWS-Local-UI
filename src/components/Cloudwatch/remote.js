@@ -1,4 +1,5 @@
 import cloudwatchlogs from 'aws-sdk/clients/cloudwatchlogs'
+
 import {endpoint} from '../../aws'
 
 const client = new cloudwatchlogs({endpoint})
